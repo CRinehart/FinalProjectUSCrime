@@ -19,6 +19,21 @@ last four questions.
         public USCrime(){
         };
         
+        public int getMaxMurderRateYear() {
+            return crime_array[][];     //input the array numbers for the highest murder rate in a year
+            }
+            
+        public int getMinMurderRateYear() {
+            return crime_array[][];     //input the array numbers for the lowest murder rate in a year
+            }
+            
+        public int getMaxRobberyRateYear() {
+            return crime_array[][];     //input the array numbers for the highest robbery rate in a year
+            }
+            
+        public int getMinRobberyRateYear() {
+            return crime_array[][];     //input the array numbers for the lowest robbery rate in a year
+            }
     
         public static void main(String[] args) throws IOException {
             BufferedReader br = null;
