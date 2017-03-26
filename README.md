@@ -4,7 +4,7 @@ For the USCrime class it needs to not have the main in it. With this one,
 I need to bring in the data via command line like below, store the data
 from the csv into arrays and then use that to do calculations for population growth
 from question 1 in the test class file and pull the year from a specific array for the 
-last four questions.
+last four questions. The TestUSCrime will print out the data.
 
     package uscrime;
 
@@ -18,7 +18,23 @@ last four questions.
         //default constructor
         public USCrime(){
         };
-        
+       
+        public static void main(String[] args) throws IOException {
+            BufferedReader br = null;
+            String fileName = args[0];
+            try {
+                String line;
+                br = new BufferedReader(new FileReader(fileName));
+                while ((line = br.readLine()) != null) {
+                    String[] crime_array = line.split(",");
+
+                    System.out.println("Year: " + crime_array[0]);
+                }
+            }
+            catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            
         public int getMaxMurderRateYear() {
             return crime_array[][];     //input the array numbers for the highest murder rate in a year
             }
@@ -35,21 +51,6 @@ last four questions.
             return crime_array[][];     //input the array numbers for the lowest robbery rate in a year
             }
     
-        public static void main(String[] args) throws IOException {
-            BufferedReader br = null;
-            String fileName = args[0];
-            try {
-                String line;
-                br = new BufferedReader(new FileReader(fileName));
-                while ((line = br.readLine()) != null) {
-                    String[] crime_array = line.split(",");
-
-                    System.out.println("Year: " + crime_array[0]);
-                }
-            }
-            catch (IOException ex) {
-                ex.printStackTrace();
-            }
         }
     }
 ------------------------------------------------------------------------------------------------------------------
